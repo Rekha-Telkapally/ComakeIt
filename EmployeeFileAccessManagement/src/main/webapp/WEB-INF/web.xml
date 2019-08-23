@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This web.xml file is not required when using Servlet 3.0 container, 
+	see implementation details http://jersey.java.net/nonav/documentation/latest/jax-rs.html -->
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+  <servlet>
+    <servlet-name>Jersey Web Application</servlet-name>
+    <servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
+    <init-param>
+      <param-name>jersey.config.server.provider.packages</param-name>
+      <param-value>com.Application.File</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet>
+    <servlet-name>Userfunctionalities</servlet-name>
+    <servlet-class>UserFunctionalities.Userfunctionalities</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>Adminfunctionalities</servlet-name>
+    <servlet-class>AdminFunctionalities.Adminfunctionalities</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Jersey Web Application</servlet-name>
+    <url-pattern>/webapi/*</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Userfunctionalities</servlet-name>
+    <url-pattern>/Userfunctionalities</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Adminfunctionalities</servlet-name>
+    <url-pattern>/Adminfunctionalities</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Managerfunctionalities</display-name>
+    <servlet-name>Managerfunctionalities</servlet-name>
+    <servlet-class>ManagerFunctionalities.Managerfunctionalities</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Managerfunctionalities</servlet-name>
+    <url-pattern>/Managerfunctionalities</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Grantedleave</display-name>
+    <servlet-name>Grantedleave</servlet-name>
+    <servlet-class>ManagerFunctionalities.Grantedleave</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Grantedleave</servlet-name>
+    <url-pattern>/Grantedleave</url-pattern>
+  </servlet-mapping>
+</web-app>
